@@ -1,0 +1,6 @@
+Method,N,Clean Accuracy,Mixed Accuracy,Robustness Drop
+LLM-only,10,,0.6,
+Vanilla RAG Clean,10,1.0,,
+Vanilla RAG Mixed,10,,0.6,0.4
+DeMo-style Mixed,10,,0.7,0.30000000000000004
+FAVE-RAG Mixed,10,,1.0,0.0

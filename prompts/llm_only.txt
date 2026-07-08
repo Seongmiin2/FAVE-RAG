@@ -1,0 +1,12 @@
+Solve the following telecommunications math problem.
+
+Question:
+{question}
+
+Return only JSON:
+{
+  "selected_formula": "...",
+  "final_answer": "...",
+  "unit": "...",
+  "reason": "brief explanation"
+}

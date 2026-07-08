@@ -1,0 +1,16 @@
+Solve the following telecommunications math problem using the provided evidence.
+
+Question:
+{question}
+
+Evidence:
+{context}
+
+Return only JSON:
+{
+  "selected_formula": "...",
+  "used_evidence": [],
+  "final_answer": "...",
+  "unit": "...",
+  "reason": "brief explanation"
+}

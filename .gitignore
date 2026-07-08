@@ -1,0 +1,14 @@
+.env
+.venv/
+.agents/
+__pycache__/
+*.pyc
+
+# Regenerable full dataset dumps and provider outputs.
+data/raw/*_full.jsonl
+outputs/real/
+
+# Local caches and OS files.
+.cache/
+Thumbs.db
+desktop.ini

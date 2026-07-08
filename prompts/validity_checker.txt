@@ -1,0 +1,26 @@
+You are an evidence validity checker for telecommunications math problems.
+
+Question:
+{question}
+
+Candidate evidence:
+{evidence_list}
+
+For each evidence item, classify it as:
+- Valid: applicable to the current problem
+- Contested: partially relevant but needs caution or additional assumptions
+- Rejected: relevant but invalid or misleading for the current problem
+
+Return only JSON:
+{
+  "arbitration": {
+    "e1": "Valid",
+    "e2": "Contested",
+    "e3": "Rejected"
+  },
+  "reasons": {
+    "e1": "...",
+    "e2": "...",
+    "e3": "..."
+  }
+}

@@ -1,0 +1,24 @@
+Solve the telecommunications math problem using only Valid evidence.
+Use Contested evidence only when the extra assumption is explicitly justified.
+Do not use Rejected evidence.
+
+Question:
+{question}
+
+Evidence with arbitration labels:
+{arbitrated_context}
+
+Return only JSON:
+{
+  "selected_formula": "...",
+  "used_evidence": [],
+  "ignored_evidence": [],
+  "unit_conversion": {},
+  "verification": {
+    "unit_check": "pass/fail",
+    "formula_check": "pass/fail",
+    "constraint_check": "pass/fail"
+  },
+  "final_answer": "...",
+  "unit": "..."
+}

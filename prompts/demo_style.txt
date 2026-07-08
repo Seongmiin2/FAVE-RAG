@@ -1,0 +1,27 @@
+Solve the following telecommunications math problem using decomposed reasoning.
+
+Question:
+{question}
+
+Evidence:
+{context}
+
+Steps:
+1. Knowledge Injection
+2. Solution Planning
+3. Verification
+4. Precision Answering
+
+Return only JSON:
+{
+  "selected_formula": "...",
+  "used_evidence": [],
+  "solution_plan": [],
+  "verification": {
+    "unit_check": "pass/fail",
+    "formula_check": "pass/fail",
+    "constraint_check": "pass/fail"
+  },
+  "final_answer": "...",
+  "unit": "..."
+}
