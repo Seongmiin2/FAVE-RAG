@@ -1,6 +1,10 @@
-Method,N,Clean Accuracy,Mixed Accuracy,Robustness Drop
-LLM-only,10,,0.6,
-Vanilla RAG Clean,10,1.0,,
-Vanilla RAG Mixed,10,,0.6,0.4
-DeMo-style Mixed,10,,0.7,0.30000000000000004
-FAVE-RAG Mixed,10,,1.0,0.0
+Method,N,n_errors,Clean Accuracy,Mixed Accuracy,Robustness Drop,Poisoning Rate,drop_vs_vanilla_clean
+DeMo-style Clean,10,0,0.7,,,0.0,-0.09999999999999998
+DeMo-style Mixed,10,0,,0.7,0.0,0.1,-0.09999999999999998
+FAVE-RAG Clean,10,0,0.6,,,0.0,0.0
+FAVE-RAG Mixed Hard,10,0,,0.7,-0.09999999999999998,0.0,-0.09999999999999998
+FAVE-RAG Mixed Silent,10,0,,0.8,-0.20000000000000007,0.0,-0.20000000000000007
+FAVE-RAG Mixed Soft,10,0,,0.5,0.09999999999999998,0.1,0.09999999999999998
+LLM-only,10,0,,,,0.1,0.0
+Vanilla RAG Clean,10,0,0.6,,,0.0,0.0
+Vanilla RAG Mixed,10,0,,0.6,0.0,0.0,0.0

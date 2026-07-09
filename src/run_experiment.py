@@ -18,8 +18,10 @@ METHOD_TO_FILE = {
     "llm_only": "llm_only.jsonl",
     "vanilla_clean": "vanilla_clean.jsonl",
     "vanilla_mixed": "vanilla_mixed.jsonl",
+    "demo_clean": "demo_clean.jsonl",
     "demo_mixed": "demo_mixed.jsonl",
-    "fave_mixed": "fave_mixed.jsonl",
+    "fave_clean": "fave_clean.jsonl",
+    "fave_mixed": "fave_mixed_soft.jsonl",
 }
 
 
@@ -121,13 +123,22 @@ def run_simple_item(client: OpenAI, model: str, method: str, item: dict) -> dict
             **call_model(client, model, fill_template(template, question=item["question"], context=render_context(item, item["mixed_context"]))),
         }
 
+    if method == "demo_clean":
+        template = load_prompt("prompts/demo_style.txt")
+        return {
+            "id": item["id"],
+            "method": method,
+            **call_model(client, model, fill_template(template, question=item["question"], context=render_context(item, item["clean_context"]))),
+        }
+
     raise ValueError(f"Unknown simple method: {method}")
 
 
-def run_fave_item(client: OpenAI, model: str, item: dict) -> dict:
+def run_fave_item(client: OpenAI, model: str, item: dict, clean: bool = False, filter_mode: str = "soft") -> dict:
     checker_template = load_prompt("prompts/validity_checker.txt")
     solver_template = load_prompt("prompts/fave_rag.txt")
-    context = render_context(item, item["mixed_context"])
+    context_ids = item["clean_context"] if clean else item["mixed_context"]
+    context = render_context(item, context_ids)
     checker = call_model(
         client,
         model,
@@ -135,10 +146,16 @@ def run_fave_item(client: OpenAI, model: str, item: dict) -> dict:
     )
     arbitration = checker.get("arbitration", {})
     by_id = evidence_map(item)
-    arbitrated_context = "\n".join(
-        f"- {eid} [{arbitration.get(eid, 'Contested')}]: {by_id[eid]['text']}"
-        for eid in item["mixed_context"]
-    )
+    lines = []
+    for eid in context_ids:
+        label = arbitration.get(eid, "Contested")
+        if filter_mode in {"hard", "silent"} and label == "Rejected":
+            continue
+        if filter_mode == "silent":
+            lines.append(f"- {eid}: {by_id[eid]['text']}")
+        else:
+            lines.append(f"- {eid} [{label}]: {by_id[eid]['text']}")
+    arbitrated_context = "\n".join(lines)
     solver = call_model(
         client,
         model,
@@ -146,16 +163,21 @@ def run_fave_item(client: OpenAI, model: str, item: dict) -> dict:
     )
     return {
         "id": item["id"],
-        "method": "fave_mixed",
+        "method": "fave_clean" if clean else f"fave_mixed_{filter_mode}",
         "predicted_arbitration": arbitration,
         "arbitration_reasons": checker.get("reasons", {}),
         **solver,
     }
 
 
-def run_method(client: OpenAI, model: str, method: str, bench_rows: list[dict], max_workers: int) -> list[dict]:
+def run_method(client: OpenAI, model: str, method: str, bench_rows: list[dict], max_workers: int, filter_mode: str) -> list[dict]:
     results_by_id: dict[str, dict] = {}
-    runner = run_fave_item if method == "fave_mixed" else lambda c, m, item: run_simple_item(c, m, method, item)
+    if method == "fave_mixed":
+        runner = lambda c, m, item: run_fave_item(c, m, item, clean=False, filter_mode=filter_mode)
+    elif method == "fave_clean":
+        runner = lambda c, m, item: run_fave_item(c, m, item, clean=True, filter_mode="soft")
+    else:
+        runner = lambda c, m, item: run_simple_item(c, m, method, item)
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = {pool.submit(runner, client, model, item): item for item in bench_rows}
         for done, future in enumerate(as_completed(futures), start=1):
@@ -207,6 +229,9 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--max_workers", type=int, default=4)
     parser.add_argument("--request_timeout", type=float, default=60)
+    parser.add_argument("--filter_mode", choices=["soft", "hard", "silent"], default="soft")
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--n_runs", type=int, default=1)
     args = parser.parse_args()
 
     load_dotenv()
@@ -215,9 +240,14 @@ def main() -> None:
     bench_rows = list(read_jsonl(args.bench))
     if args.limit is not None:
         bench_rows = bench_rows[: args.limit]
-    rows = run_method(client, model, args.method, bench_rows, args.max_workers)
+    rows = run_method(client, model, args.method, bench_rows, args.max_workers, args.filter_mode)
     output_dir = Path(args.output_dir or f"outputs/real/{args.provider}")
-    output_path = output_dir / METHOD_TO_FILE[args.method]
+    filename = METHOD_TO_FILE[args.method]
+    if args.method == "fave_mixed":
+        filename = f"fave_mixed_{args.filter_mode}.jsonl"
+    if args.n_runs > 1:
+        filename = filename.replace(".jsonl", f".run{args.seed}.jsonl")
+    output_path = output_dir / filename
     write_jsonl(output_path, rows)
     print(f"Wrote {output_path}")
 

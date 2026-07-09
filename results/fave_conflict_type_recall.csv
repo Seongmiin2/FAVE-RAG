@@ -1,0 +1,64 @@
+Method,conflict_type,N,Recall
+DeMo-style Clean,Condition Mismatch,1,0.0
+DeMo-style Clean,Context-Dependent Approximation Misuse,1,0.0
+DeMo-style Clean,Field/Power Ratio Confusion,1,0.0
+DeMo-style Clean,Formula Substitution / Unit Mixing,1,0.0
+DeMo-style Clean,Solution Step Corruption,2,0.0
+DeMo-style Clean,Unit Compatibility Conflict,3,0.0
+DeMo-style Clean,Variable Binding / Convention Mismatch,1,0.0
+DeMo-style Mixed,Condition Mismatch,1,0.0
+DeMo-style Mixed,Context-Dependent Approximation Misuse,1,0.0
+DeMo-style Mixed,Field/Power Ratio Confusion,1,0.0
+DeMo-style Mixed,Formula Substitution / Unit Mixing,1,0.0
+DeMo-style Mixed,Solution Step Corruption,2,0.0
+DeMo-style Mixed,Unit Compatibility Conflict,3,0.0
+DeMo-style Mixed,Variable Binding / Convention Mismatch,1,0.0
+FAVE-RAG Clean,Condition Mismatch,1,0.0
+FAVE-RAG Clean,Context-Dependent Approximation Misuse,1,0.0
+FAVE-RAG Clean,Field/Power Ratio Confusion,1,0.0
+FAVE-RAG Clean,Formula Substitution / Unit Mixing,1,0.0
+FAVE-RAG Clean,Solution Step Corruption,2,0.0
+FAVE-RAG Clean,Unit Compatibility Conflict,3,0.0
+FAVE-RAG Clean,Variable Binding / Convention Mismatch,1,0.0
+FAVE-RAG Mixed Hard,Condition Mismatch,1,0.0
+FAVE-RAG Mixed Hard,Context-Dependent Approximation Misuse,1,0.0
+FAVE-RAG Mixed Hard,Field/Power Ratio Confusion,1,1.0
+FAVE-RAG Mixed Hard,Formula Substitution / Unit Mixing,1,0.0
+FAVE-RAG Mixed Hard,Solution Step Corruption,2,1.0
+FAVE-RAG Mixed Hard,Unit Compatibility Conflict,3,0.3333333333333333
+FAVE-RAG Mixed Hard,Variable Binding / Convention Mismatch,1,0.0
+FAVE-RAG Mixed Silent,Condition Mismatch,1,0.0
+FAVE-RAG Mixed Silent,Context-Dependent Approximation Misuse,1,0.0
+FAVE-RAG Mixed Silent,Field/Power Ratio Confusion,1,1.0
+FAVE-RAG Mixed Silent,Formula Substitution / Unit Mixing,1,0.0
+FAVE-RAG Mixed Silent,Solution Step Corruption,2,0.5
+FAVE-RAG Mixed Silent,Unit Compatibility Conflict,3,0.3333333333333333
+FAVE-RAG Mixed Silent,Variable Binding / Convention Mismatch,1,0.0
+FAVE-RAG Mixed Soft,Condition Mismatch,1,0.0
+FAVE-RAG Mixed Soft,Context-Dependent Approximation Misuse,1,0.0
+FAVE-RAG Mixed Soft,Field/Power Ratio Confusion,1,1.0
+FAVE-RAG Mixed Soft,Formula Substitution / Unit Mixing,1,1.0
+FAVE-RAG Mixed Soft,Solution Step Corruption,2,0.5
+FAVE-RAG Mixed Soft,Unit Compatibility Conflict,3,0.3333333333333333
+FAVE-RAG Mixed Soft,Variable Binding / Convention Mismatch,1,0.0
+LLM-only,Condition Mismatch,1,0.0
+LLM-only,Context-Dependent Approximation Misuse,1,0.0
+LLM-only,Field/Power Ratio Confusion,1,0.0
+LLM-only,Formula Substitution / Unit Mixing,1,0.0
+LLM-only,Solution Step Corruption,2,0.0
+LLM-only,Unit Compatibility Conflict,3,0.0
+LLM-only,Variable Binding / Convention Mismatch,1,0.0
+Vanilla RAG Clean,Condition Mismatch,1,0.0
+Vanilla RAG Clean,Context-Dependent Approximation Misuse,1,0.0
+Vanilla RAG Clean,Field/Power Ratio Confusion,1,0.0
+Vanilla RAG Clean,Formula Substitution / Unit Mixing,1,0.0
+Vanilla RAG Clean,Solution Step Corruption,2,0.0
+Vanilla RAG Clean,Unit Compatibility Conflict,3,0.0
+Vanilla RAG Clean,Variable Binding / Convention Mismatch,1,0.0
+Vanilla RAG Mixed,Condition Mismatch,1,0.0
+Vanilla RAG Mixed,Context-Dependent Approximation Misuse,1,0.0
+Vanilla RAG Mixed,Field/Power Ratio Confusion,1,0.0
+Vanilla RAG Mixed,Formula Substitution / Unit Mixing,1,0.0
+Vanilla RAG Mixed,Solution Step Corruption,2,0.0
+Vanilla RAG Mixed,Unit Compatibility Conflict,3,0.0
+Vanilla RAG Mixed,Variable Binding / Convention Mismatch,1,0.0

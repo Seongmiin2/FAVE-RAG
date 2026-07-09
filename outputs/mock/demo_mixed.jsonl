@@ -1,10 +1,10 @@
-{"id": "fave_0001", "method": "DeMo-style Mixed", "selected_formula": "C = B log2(1 + SNR_linear)", "final_answer": "66.58 Mbps", "unit": "as requested", "used_evidence": ["e1_1", "e1_2"]}
-{"id": "fave_0002", "method": "DeMo-style Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e2_1", "e2_2"]}
-{"id": "fave_0003", "method": "DeMo-style Mixed", "selected_formula": "FSPL_dB = 20 log10(d_km) + 20 log10(f_MHz) + 32.44", "final_answer": "106.07 dB", "unit": "as requested", "used_evidence": ["e3_1"]}
-{"id": "fave_0004", "method": "DeMo-style Mixed", "selected_formula": "SINR = S / (I + N)", "final_answer": "3.33", "unit": "as requested", "used_evidence": ["e4_1"]}
-{"id": "fave_0005", "method": "DeMo-style Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e5_1", "e5_2"]}
-{"id": "fave_0006", "method": "DeMo-style Mixed", "selected_formula": "P_b = Q(sqrt(2 Eb/N0_linear))", "final_answer": "3.36e-5", "unit": "as requested", "used_evidence": ["e6_1"]}
-{"id": "fave_0007", "method": "DeMo-style Mixed", "selected_formula": "R_s <= 2B", "final_answer": "6000 symbols/s", "unit": "as requested", "used_evidence": ["e7_1"]}
-{"id": "fave_0008", "method": "DeMo-style Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e8_1", "e8_2"]}
-{"id": "fave_0009", "method": "DeMo-style Mixed", "selected_formula": "Pr = Pt Gt Gr (lambda / (4 pi d))^2", "final_answer": "9.89e-9 W", "unit": "as requested", "used_evidence": ["e9_1"]}
-{"id": "fave_0010", "method": "DeMo-style Mixed", "selected_formula": "SNR_linear = 10^(SNR_dB / 10)", "final_answer": "19.95", "unit": "as requested", "used_evidence": ["e10_1"]}
+{"id": "fave_0001", "method": "DeMo-style Mixed", "selected_formula": "trap procedure", "final_answer": "43.923174 Mbps", "unit": "Mbps"}
+{"id": "fave_0002", "method": "DeMo-style Mixed", "selected_formula": "eta = C / B", "final_answer": "6.0 bps/Hz", "unit": "bps/Hz"}
+{"id": "fave_0003", "method": "DeMo-style Mixed", "selected_formula": "FSPL_dB = 20 log10(d_km) + 20 log10(f_MHz) + 32.44", "final_answer": "106.064825 dB", "unit": "dB"}
+{"id": "fave_0004", "method": "DeMo-style Mixed", "selected_formula": "trap procedure", "final_answer": "10.0 linear", "unit": "linear"}
+{"id": "fave_0005", "method": "DeMo-style Mixed", "selected_formula": "P_out = 1 - exp(-gamma_th / gamma_bar)", "final_answer": "0.393469 probability", "unit": "probability"}
+{"id": "fave_0006", "method": "DeMo-style Mixed", "selected_formula": "P_b = Q(sqrt(2 Eb/N0_linear))", "final_answer": "3.362723e-05 probability", "unit": "probability"}
+{"id": "fave_0007", "method": "DeMo-style Mixed", "selected_formula": "trap procedure", "final_answer": "600.0 symbols/s", "unit": "symbols/s"}
+{"id": "fave_0008", "method": "DeMo-style Mixed", "selected_formula": "C = log2 det(I + rho / Nt * H H^H)", "final_answer": "5.169925 bps/Hz", "unit": "bps/Hz"}
+{"id": "fave_0009", "method": "DeMo-style Mixed", "selected_formula": "Pr = Pt Gt Gr (lambda / (4 pi d))^2", "final_answer": "9.894647e-09 W", "unit": "W"}
+{"id": "fave_0010", "method": "DeMo-style Mixed", "selected_formula": "trap procedure", "final_answer": "4.466836 linear", "unit": "linear"}

@@ -1,10 +1,10 @@
-{"id": "fave_0001", "method": "Vanilla RAG Mixed", "selected_formula": "C = B log2(1 + SNR_linear)", "final_answer": "66.58 Mbps", "unit": "as requested", "used_evidence": ["e1_1", "e1_2"]}
-{"id": "fave_0002", "method": "Vanilla RAG Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e2_1", "e2_2"]}
-{"id": "fave_0003", "method": "Vanilla RAG Mixed", "selected_formula": "FSPL_dB = 20 log10(d_km) + 20 log10(f_MHz) + 32.44", "final_answer": "106.07 dB", "unit": "as requested", "used_evidence": ["e3_1"]}
-{"id": "fave_0004", "method": "Vanilla RAG Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e4_1", "e4_2"]}
-{"id": "fave_0005", "method": "Vanilla RAG Mixed", "selected_formula": "P_out = 1 - exp(-gamma_th / gamma_bar)", "final_answer": "0.3935", "unit": "as requested", "used_evidence": ["e5_1"]}
-{"id": "fave_0006", "method": "Vanilla RAG Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e6_1", "e6_2"]}
-{"id": "fave_0007", "method": "Vanilla RAG Mixed", "selected_formula": "R_s <= 2B", "final_answer": "6000 symbols/s", "unit": "as requested", "used_evidence": ["e7_1"]}
-{"id": "fave_0008", "method": "Vanilla RAG Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e8_1", "e8_2"]}
-{"id": "fave_0009", "method": "Vanilla RAG Mixed", "selected_formula": "Pr = Pt Gt Gr (lambda / (4 pi d))^2", "final_answer": "9.89e-9 W", "unit": "as requested", "used_evidence": ["e9_1"]}
-{"id": "fave_0010", "method": "Vanilla RAG Mixed", "selected_formula": "context-selected incorrect formula", "final_answer": "0", "unit": "as requested", "used_evidence": ["e10_1", "e10_2"]}
+{"id": "fave_0001", "method": "Vanilla RAG Mixed", "selected_formula": "C = B log2(1 + SNR_linear)", "final_answer": "66.582115 Mbps", "unit": "Mbps"}
+{"id": "fave_0002", "method": "Vanilla RAG Mixed", "selected_formula": "trap procedure", "final_answer": "6000000.0 bps/Hz", "unit": "bps/Hz"}
+{"id": "fave_0003", "method": "Vanilla RAG Mixed", "selected_formula": "FSPL_dB = 20 log10(d_km) + 20 log10(f_MHz) + 32.44", "final_answer": "106.064825 dB", "unit": "dB"}
+{"id": "fave_0004", "method": "Vanilla RAG Mixed", "selected_formula": "trap procedure", "final_answer": "10.0 linear", "unit": "linear"}
+{"id": "fave_0005", "method": "Vanilla RAG Mixed", "selected_formula": "P_out = 1 - exp(-gamma_th / gamma_bar)", "final_answer": "0.393469 probability", "unit": "probability"}
+{"id": "fave_0006", "method": "Vanilla RAG Mixed", "selected_formula": "trap procedure", "final_answer": "1.104525e-05 probability", "unit": "probability"}
+{"id": "fave_0007", "method": "Vanilla RAG Mixed", "selected_formula": "R_s <= 2B", "final_answer": "6000.0 symbols/s", "unit": "symbols/s"}
+{"id": "fave_0008", "method": "Vanilla RAG Mixed", "selected_formula": "trap procedure", "final_answer": "6.918863 bps/Hz", "unit": "bps/Hz"}
+{"id": "fave_0009", "method": "Vanilla RAG Mixed", "selected_formula": "Pr = Pt Gt Gr (lambda / (4 pi d))^2", "final_answer": "9.894647e-09 W", "unit": "W"}
+{"id": "fave_0010", "method": "Vanilla RAG Mixed", "selected_formula": "trap procedure", "final_answer": "4.466836 linear", "unit": "linear"}

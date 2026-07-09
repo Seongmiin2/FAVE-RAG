@@ -123,10 +123,10 @@ python src/run_experiment.py --method llm_only
 python src/run_experiment.py --method vanilla_clean
 python src/run_experiment.py --method vanilla_mixed
 python src/run_experiment.py --method demo_mixed
-python src/eval_fave.py --bench data/pilot/fave_bench_10.jsonl --pred_dir outputs/real
+python src/eval_fave.py --bench data/pilot/fave_bench_10.jsonl --pred_dir outputs/real/openai
 ```
 
-The current real runner intentionally stops if `OPENAI_API_KEY` is missing.
+The current real runner writes provider-specific outputs under `outputs/real/{provider}/` and intentionally stops if the required API key is missing.
 
 ## OpenAI Pilot Result
 

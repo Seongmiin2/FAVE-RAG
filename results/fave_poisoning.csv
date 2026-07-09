@@ -1,0 +1,10 @@
+Method,N,Poisoning Rate
+DeMo-style Clean,10,0.0
+DeMo-style Mixed,10,0.1
+FAVE-RAG Clean,10,0.0
+FAVE-RAG Mixed Hard,10,0.0
+FAVE-RAG Mixed Silent,10,0.0
+FAVE-RAG Mixed Soft,10,0.1
+LLM-only,10,0.1
+Vanilla RAG Clean,10,0.0
+Vanilla RAG Mixed,10,0.0
