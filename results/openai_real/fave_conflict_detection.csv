@@ -1,0 +1,6 @@
+Method,TP,FP,FN,Precision,Recall,F1
+LLM-only,0,0,10,0.0,0.0,0.0
+Vanilla RAG Clean,0,0,10,0.0,0.0,0.0
+Vanilla RAG Mixed,0,0,10,0.0,0.0,0.0
+DeMo-style Mixed,0,0,10,0.0,0.0,0.0
+FAVE-RAG Mixed,8,1,2,0.8888888888888888,0.8,0.8421052631578948

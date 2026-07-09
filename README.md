@@ -128,6 +128,21 @@ python src/eval_fave.py --bench data/pilot/fave_bench_10.jsonl --pred_dir output
 
 The current real runner intentionally stops if `OPENAI_API_KEY` is missing.
 
+## OpenAI Pilot Result
+
+The first real OpenAI run on the 10-item seed benchmark completed on July 9, 2026.
+
+```text
+LLM-only mixed accuracy: 0.70
+Vanilla RAG clean accuracy: 0.70
+Vanilla RAG mixed accuracy: 0.70
+DeMo-style mixed accuracy: 0.80
+FAVE-RAG mixed accuracy: 0.70
+FAVE-RAG conflict detection F1: 0.842
+```
+
+Interpretation: the validity checker is already detecting many rejected evidence items, but the current 10-item seed does not yet show a robustness gain over Vanilla RAG. This means the next benchmark iteration should strengthen true-but-inapplicable distractors, add more closed-book filtered items, and inspect conflict-type-specific failures.
+
 ## Benchmark Schema
 
 Each row contains:

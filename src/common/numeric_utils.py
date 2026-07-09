@@ -22,9 +22,21 @@ def extract_first_number(text: object) -> Optional[float]:
         return None
 
 
+def extract_numbers(text: object) -> list[float]:
+    if text is None:
+        return []
+    numbers = []
+    for match in NUMBER_RE.finditer(str(text).replace(",", "")):
+        try:
+            numbers.append(float(match.group(0)))
+        except ValueError:
+            continue
+    return numbers
+
+
 def is_close(pred: object, gold: object, rel_tol: float = 0.03, abs_tol: float = 1e-3) -> bool:
-    pred_num = extract_first_number(pred)
+    pred_nums = extract_numbers(pred)
     gold_num = extract_first_number(gold)
-    if pred_num is None or gold_num is None:
+    if not pred_nums or gold_num is None:
         return False
-    return math.isclose(pred_num, gold_num, rel_tol=rel_tol, abs_tol=abs_tol)
+    return any(math.isclose(pred_num, gold_num, rel_tol=rel_tol, abs_tol=abs_tol) for pred_num in pred_nums)
